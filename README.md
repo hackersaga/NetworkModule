@@ -20,7 +20,7 @@ To keep all the network calls related code at one place. For more modularized, m
 ```
 
 
-### How to use the network module in your project: ###
+### How to set up: ###
 1. Copy "Volley.jar" from libs folder to your libs folder.
 2. Copy "com.example.NetworkManager" and "com.example.NetworkManager.ChuiMui" package to your project.
 3. Add Network permission in the "AndroidManifest.xml" file:
