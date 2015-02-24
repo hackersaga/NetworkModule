@@ -18,13 +18,14 @@ import com.example.NetworkManager.TouchMeNot.WebRequest;
 public class Marketplace {
 
 	private Context mContext;
+	public static final String DOMAIN_NAME = "http://www.cibola.co.in/";
 	
 	public Marketplace(Context pContext){
 		this.mContext = pContext;
 	}
 	
 	public String getURL(RequestType type ){
-		String url = WebConstants.DOMAIN_NAME;
+		String url = DOMAIN_NAME;
 		switch (type) {
 			case RequestTypeTesting:
 			{
