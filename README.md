@@ -24,9 +24,21 @@ To keep all the network calls related code at one place. For more modularized, m
 1. Copy "Volley.jar" from libs folder to your libs folder.
 2. Copy "com.example.NetworkManager" and "com.example.NetworkManager.ChuiMui" package to your project.
 3. Add Network permission in the "AndroidManifest.xml" file:
+
+```
+#!xml
+
 	<uses-permission android:name="android.permission.INTERNET" />
-4. Add "NetworkService" to Manifest file
+```
+
+4.  Add "NetworkService" to Manifest file
+
+```
+#!xml
+
 	<service android:name="com.example.NetworkManager.NetworkService" ></service>
+```
+
 
 ### Advice ###
 * "com.example.NetworkManager.TouchMeNot" => No need to touch this part. It will be as it is.
