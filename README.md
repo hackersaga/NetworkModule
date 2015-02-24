@@ -42,7 +42,7 @@ To keep all the network calls related code at one place. For more modularized, m
 
 ### Advice ###
 * "com.example.NetworkManager.TouchMeNot" => No need to touch this part. It will be as it is.
-* If "Copying" is an issue, then just delete/modify comments in all the files. In case, I will take your side ;)
+* If "Copying" is an issue, then just delete/modify comments in all the files. Just in case, I will take your side ;)
 
 ### Coming soon... ###
 * Image uploader
