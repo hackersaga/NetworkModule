@@ -11,7 +11,7 @@ To keep all the network calls related code at one place. For more modularized, m
 ```
 #!python
 
-       {
+    {
 		"SUCCESS":1,
 		"MESSAGE": "Blah Blah",
 		"DATA":[...],
@@ -37,4 +37,4 @@ To keep all the network calls related code at one place. For more modularized, m
 * Image downloader
 
 ### Didn't feel need of the following: ###
-* Http Headers 
+* Http Headers
