@@ -1,6 +1,6 @@
 package com.example.NetworkManager.TouchMeNot;
 
-import java.util.Map;
+import java.util.HashMap;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,7 +14,7 @@ public class WebRequest {
 	private String mURL;
 	private int method = 1;
 	private JSONObject mParam;
-	private Map<String, String> mHeader;
+	private HashMap<String, String> mHeader;
 	private RequestType mRequestType;
 	private WebConnectionCallbacks mCallbacks;
 	private boolean isAsynchronous = true;
@@ -48,11 +48,12 @@ public class WebRequest {
 		this.isAsynchronous = false;
 	}
 
-	public Map<String, String> getHeader() {
+	public HashMap<String, String> getHeader() {
 		return mHeader;
 	}
+	
 
-	public void setHeader(Map<String, String> header) {
+	public void setHeader(HashMap<String, String> header) {
 		this.mHeader = header;
 	}
 

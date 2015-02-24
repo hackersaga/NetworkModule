@@ -7,6 +7,8 @@
 
 package com.example.NetworkManager;
 
+import org.json.JSONObject;
+
 import android.app.Activity;
 import android.content.Context;
 
@@ -36,13 +38,21 @@ public class Marketplace {
 		return url;
 	}
 
-
-	public void test(Activity activity, RequestType type){
+	
+	public void testAsynchronous(Activity activity, RequestType type){
 		WebRequest request = new WebRequest(activity, getURL(RequestType.RequestTypeTesting), RequestType.RequestTypeTesting);
 		request.addParam("param", "Romeo");
 		
 		VolleyConnector connector = new VolleyConnector(mContext, request);
 		connector.start();
+	}
+
+	public JSONObject testSynchronous(Activity activity, RequestType type){
+		WebRequest request = new WebRequest(getURL(RequestType.RequestTypeTesting), RequestType.RequestTypeTesting);
+		request.addParam("param", "Romeo");
+		
+		VolleyConnector connector = new VolleyConnector(mContext, request);
+		return connector.start();
 	}
 	
 	
