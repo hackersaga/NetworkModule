@@ -2,7 +2,6 @@ package com.example.NetworkManager.TouchMeNot;
 
 import java.util.HashMap;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
@@ -13,7 +12,7 @@ public class WebRequest {
 
 	private String mURL;
 	private int method = 1;
-	private JSONObject mParam;
+	private HashMap<String, String> mParam;
 	private HashMap<String, String> mHeader;
 	private RequestType mRequestType;
 	private WebConnectionCallbacks mCallbacks;
@@ -29,6 +28,7 @@ public class WebRequest {
 	public WebRequest(Activity pActivity,String pURL, RequestType pRequestType) {
 		this.mURL = pURL;
 		this.mRequestType = pRequestType;
+		this.mParam = new HashMap<String, String>();
 		try{
 			this.mCallbacks = (WebConnectionCallbacks) pActivity;
 		}
@@ -46,6 +46,7 @@ public class WebRequest {
 		this.mURL = pURL;
 		this.mRequestType = pRequestType;
 		this.isAsynchronous = false;
+		this.mParam = new HashMap<String, String>();
 	}
 
 	public HashMap<String, String> getHeader() {
@@ -61,22 +62,17 @@ public class WebRequest {
 		return mURL;
 	}
 
-	public JSONObject getParam() {
+	public HashMap<String, String> getParam() {
 		return mParam;
 	}
 
 	public void addParam(String pKey, String pValue)
 	{
 		if(this.mParam==null){
-			this.mParam = new JSONObject();
+			this.mParam = new HashMap<String,String>();
 		}
-		try{
-			this.mParam.put(pKey, pValue);
-		}
-		catch(JSONException e){
-			e.printStackTrace();
-		}
-
+		this.mParam.put(pKey, pValue);
+	
 	}
 
 	public boolean isCallbackEnabled(){

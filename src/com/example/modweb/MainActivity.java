@@ -2,14 +2,17 @@ package com.example.modweb;
 
 import org.json.JSONObject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.NetworkManager.Marketplace;
+import com.example.NetworkManager.NetworkService;
 import com.example.NetworkManager.RequestType;
 import com.example.NetworkManager.TouchMeNot.WebConnectionCallbacks;
 
@@ -27,9 +30,9 @@ public class MainActivity extends ActionBarActivity implements WebConnectionCall
 			
 			@Override
 			public void onClick(View v) {
-				
+				startService(new Intent(MainActivity.this, NetworkService.class));
 				marketplace.testAsynchronous(MainActivity.this, RequestType.RequestTypeTesting);
-				
+				Log.d("Debug", "Request fired.");
 			}
 		});
 		

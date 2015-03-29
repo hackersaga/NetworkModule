@@ -32,6 +32,11 @@ public class Marketplace {
 				url += "test.php";
 				break;
 			}
+			case RequestTypeTeachers:
+			{
+				url = "http://cibola.in/csp/get_teachers/";
+				break;
+			}
 			default:
 				break;
 		}
@@ -47,6 +52,7 @@ public class Marketplace {
 		VolleyConnector connector = new VolleyConnector(mContext, request);
 		connector.start();
 	}
+	
 
 	public JSONObject testSynchronous(Activity activity, RequestType type){
 		WebRequest request = new WebRequest(getURL(RequestType.RequestTypeTesting), RequestType.RequestTypeTesting);

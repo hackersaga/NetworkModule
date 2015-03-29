@@ -7,4 +7,5 @@ package com.example.NetworkManager;
 public enum RequestType {
 	
 	RequestTypeTesting,
+	RequestTypeTeachers,
 }

@@ -25,8 +25,7 @@ public class NetworkService extends IntentService {
 	@Override
 	protected void onHandleIntent(Intent intent) {
 		Marketplace marketplace = new Marketplace(getApplicationContext());
-		marketplace.testSynchronous(null, RequestType.RequestTypeTesting);
-		
+		System.out.println(marketplace.testSynchronous(null, RequestType.RequestTypeTesting));	
 	}
 	
 	
