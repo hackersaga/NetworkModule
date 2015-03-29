@@ -4,6 +4,9 @@ import org.json.JSONObject;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.NetworkManager.Marketplace;
@@ -19,7 +22,17 @@ public class MainActivity extends ActionBarActivity implements WebConnectionCall
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		marketplace = new Marketplace(this);
-		marketplace.testAsynchronous(this, RequestType.RequestTypeTesting);
+		Button b = (Button) findViewById(R.id.textview);
+		b.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				marketplace.testAsynchronous(MainActivity.this, RequestType.RequestTypeTesting);
+				
+			}
+		});
+		
 	}
 
 	@Override
